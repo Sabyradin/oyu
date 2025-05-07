@@ -1,0 +1,612 @@
+:root {
+    --primary-color: #2e7d32;
+    --primary-dark: #1b5e20;
+    --primary-light: #81c784;
+    --secondary-color: #ff9800;
+    --highlight-color: #fff8e1;
+    --text-color: #333;
+    --text-light: #666;
+    --border-color: #e0e0e0;
+    --bg-light: #f5f5f5;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--bg-light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header стильдері */
+.header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Сызықты алып тастайды */
+  color: inherit; /* Жазу түсін мұрагерлікпен алады */
+}
+.logo a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+
+.leaf-icon {
+    font-size: 1.8rem;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 20px;
+    color: white;
+    position: relative;
+  }
+  
+  .nav-icons i {
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .nav-icons i:hover {
+    transform: scale(1.2);
+  }
+  
+  .cart-wrapper {
+    position: relative;
+  }
+  
+  .cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: #ffc107;
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+  }
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.main-nav li {
+    margin-left: 25px;
+}
+
+.main-nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 5px 0;
+    position: relative;
+}
+
+.main-nav a.active {
+    font-weight: 600;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--white);
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+.cart-count {
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.8rem;
+    margin-left: 5px;
+}
+
+/* Негізгі мазмұн */
+.main-content {
+    padding: 40px 0;
+}
+
+.delivery-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.delivery-header h1 {
+    font-size: 2.2rem;
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.delivery-header h1 i {
+    color: var(--primary-color);
+}
+
+.delivery-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+.delivery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.delivery-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.delivery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.delivery-card.highlight {
+    background-color: var(--highlight-color);
+    border: 1px solid var(--primary-light);
+}
+
+.delivery-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: var(--primary-dark);
+    font-size: 1.5rem;
+}
+
+.delivery-card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--primary-dark);
+}
+
+.delivery-content {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+.delivery-content p {
+    margin-bottom: 15px;
+}
+
+.delivery-list {
+    list-style: none;
+}
+
+.delivery-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.city-icon {
+    color: var(--primary-color);
+    margin-right: 5px;
+}
+
+.region-icon {
+    color: var(--secondary-color);
+    margin-right: 5px;
+}
+
+.free-delivery {
+    font-size: 0.9rem;
+    color: var(--primary-dark);
+    font-weight: 500;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: rgba(46, 125, 50, 0.1);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    background-color: rgba(46, 125, 50, 0.2);
+}
+
+.map-container {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+       
+      
+      
+}
+.map-card {
+    grid-column: span 3; /* екі колонканы алсын */
+  }
+  
+  @media (max-width: 1000px) {
+    .map-card {
+      grid-column: span 1; /* телефонда біреу */
+    }
+    
+  }
+  
+
+/* Footer стильдері */
+.footer {
+    background-color: var(--primary-dark);
+    color: var(--white);
+    padding: 40px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo .leaf-icon {
+    font-size: 1.8rem;
+    margin-right: 10px;
+}
+
+.footer-logo .logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-light);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* .main-nav ішінде енді тек тізім тұрады */
+.main-nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+  }
+/* Адаптивтік дизайн */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .main-nav li {
+        margin: 10px 0;
+    }
+
+    .main-nav a {
+        display: block;
+        width: 100%;
+    }
+
+    .header-icons {
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .main-content {
+        padding: 20px 0;
+    }
+
+    .delivery-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Жаңа стильдер */
+.delivery-card {
+    padding: 35px;
+    border-radius: 12px;
+}
+
+.time-card .time-schedule {
+    margin-bottom: 20px;
+}
+
+.time-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.time-item:last-child {
+    border-bottom: none;
+}
+
+.time-days {
+    font-weight: 600;
+}
+
+.time-hours {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.note {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.price-card .delivery-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.price-card th, .price-card td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.price-card th {
+    background-color: rgba(46, 125, 50, 0.1);
+    color: var(--primary-dark);
+}
+
+.price-card tr:last-child td {
+    border-bottom: none;
+}
+
+.receive-card .receive-steps {
+    margin-bottom: 25px;
+}
+
+.step {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: flex-start;
+}
+
+.step-number {
+    background-color: var(--primary-color);
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.contact-box {
+    background-color: rgba(46, 125, 50, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.contact-methods {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-link.whatsapp {
+    background-color: rgba(37, 211, 102, 0.1);
+    color: #075e54;
+}
+
+.contact-link.whatsapp:hover {
+    background-color: rgba(37, 211, 102, 0.2);
+}
+
+.map-description {
+    margin-bottom: 15px;
+}
+
+.delivery-cities {
+    margin-top: 20px;
+}
+
+.delivery-cities h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+
+.cities-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cities-list span {
+    background-color: var(--bg-light);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+/* Навигацияны жақсарту */
+.main-nav a.active {
+    font-weight: 600;
+    position: relative;
+}
+
+.main-nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--white);
+    border-radius: 3px;
+}
+
+.nav-icon {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: transform 0.2s;
+}
+
+.nav-icon:hover {
+    transform: scale(1.2);
+}
+
+.cart-wrapper {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--secondary-color);
+    color: black;
+    font-size: 0.7rem;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Қосымша медиа-сұраныстар */
+@media (max-width: 768px) {
+    .delivery-card {
+        padding: 25px;
+    }
+    
+    .price-card .delivery-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .contact-methods {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

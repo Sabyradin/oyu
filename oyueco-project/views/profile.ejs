@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main class="profile-container">
+    <div class="profile-header">
+      <h1>Менің профилім</h1>
+      <form action="/logout" method="POST">
+        <button type="submit" class="btn-logout">Шығу</button>
+      </form>
+    </div>
+    
+    <div class="profile-content">
+      <section class="profile-section">
+        <h2>Жеке ақпарат</h2>
+        
+        <div class="profile-info">
+          <div class="info-group">
+            <h3>Толық аты-жөні</h3>
+            <p><%= user.fullName %></p>
+          </div>
+          
+          <div class="info-group">
+            <h3>Электрондық пошта</h3>
+            <p><%= user.email %></p>
+          </div>
+          
+          <% if (user.phone) { %>
+            <div class="info-group">
+              <h3>Телефон нөмірі</h3>
+              <p><%= user.phone %></p>
+            </div>
+          <% } %>
+          
+          <% if (user.address) { %>
+            <div class="info-group">
+              <h3>Мекен-жай</h3>
+              <p>
+                <%= user.address.city %>, 
+                <%= user.address.street %>, 
+                <%= user.address.house %>
+              </p>
+            </div>
+          <% } %>
+        </div>
+      </section>
+      
+      <section class="profile-section">
+        <h2>Соңғы тапсырыстар</h2>
+        <div class="orders-list">
+          <!-- Тапсырыстар тізімі -->
+          <div class="order-item">
+            <span class="order-id">#ORD-2023-0456</span>
+            <span class="order-date">12.11.2023</span>
+            <span class="order-status">Жеткізді</span>
+            <a href="#" class="order-details">Толығырақ</a>
+          </div>
+          
+          <div class="order-item">
+            <span class="order-id">#ORD-2023-0389</span>
+            <span class="order-date">28.10.2023</span>
+            <span class="order-status">Вәделуке</span>
+            <a href="#" class="order-details">Толығырақ</a>
+          </div>
+          
+          <a href="#" class="view-all">Барлығын қарау</a>
+        </div>
+      </section>
+      
+      <section class="profile-stats">
+        <div class="stat-card">
+          <h3>Өнергу</h3>
+          <p class="stat-value">12</p>
+          <p class="stat-label">Тапсырыс</p>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Рейтинг</h3>
+          <p class="stat-value">4.8</p>
+          <p class="stat-label">Ұпай</p>
+        </div>
+        
+        <div class="stat-card">
+          <h3>Жылдан бері</h3>
+          <p class="stat-value"><%= user.memberSince %></p>
+          <p class="stat-label">Жыл</p>
+        </div>
+      </section>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="footer-content">
+      <h3>OYU Eco</h3>
+      <div class="footer-links">
+        <a href="#">Біз туралы</a>
+        <a href="#">Құпиялылық саясаты</a>
+        <a href="#">Қызмет көрсету шарттары</a>
+      </div>
+      <p>© 2023 OYU EcoShop. Барлық құқықтар қорғалған.</p>
+    </div>
+  </footer>
+  
+  <script src="/js/auth.js"></script>
+</body>
+</html>

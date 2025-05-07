@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main class="auth-container">
+    <div class="auth-card">
+      <h1>Тіркелу</h1>
+      
+      <% if (typeof error !== 'undefined') { %>
+        <div class="alert alert-danger"><%= error %></div>
+      <% } %>
+      
+      <form action="/register" method="POST">
+        <div class="form-group">
+          <label for="fullName">Толық аты-жөні</label>
+          <input type="text" id="fullName" name="fullName" value="<%= typeof fullName !== 'undefined' ? fullName : '' %>" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Электрондық пошта</label>
+          <input type="email" id="email" name="email" value="<%= typeof email !== 'undefined' ? email : '' %>" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Құпия сөз</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">Телефон нөмірі</label>
+          <input type="tel" id="phone" name="phone" value="<%= typeof phone !== 'undefined' ? phone : '' %>">
+        </div>
+        
+        <button type="submit" class="btn-primary">Тіркелу</button>
+      </form>
+      
+      <div class="auth-links">
+        <p>Аккаунтыңыз бар ма? <a href="/login">Кіру</a></p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
