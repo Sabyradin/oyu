@@ -97,7 +97,7 @@ app.get('/api/admin/dashboard', authorizeRoles('admin'), (req, res) => {
 });
 
 // Сервер іске қосу
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
     console.log(`Сервер ${PORT} портында іске қосылды`);
 });
