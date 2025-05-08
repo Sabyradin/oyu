@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     // MongoDB қосылуы үшін API URL
-    const API_URL = 'http://localhost:3000/api'; 
+  const API_URL = 'https://oyu-backend.onrender.com/api';
 
     // Кіру формасы
     const loginForm = document.getElementById('loginForm');
